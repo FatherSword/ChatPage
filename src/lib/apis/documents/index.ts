@@ -9,6 +9,7 @@ export const createNewDoc = async (
 	content: object | null = null
 ) => {
 	let error = null;
+	console.log(content);
 
 	const res = await fetch(`${WEBUI_API_BASE_URL}/documents/create`, {
 		method: 'POST',

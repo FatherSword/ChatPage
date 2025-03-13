@@ -18,3 +18,4 @@ ALTER COLUMN archived TYPE boolean USING archived::boolean,
 ALTER COLUMN created_at TYPE int8 USING created_at::int8,
 ALTER COLUMN updated_at TYPE int8 USING updated_at::int8;
 ```
+

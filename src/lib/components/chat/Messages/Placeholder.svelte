@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 
 	import Suggestions from '../MessageInput/Suggestions.svelte';
-  	import GetRewards from '$lib/components/wallet/GetRewards.svelte';
+  	//import GetRewards from '$lib/components/wallet/GetRewards.svelte';
 
 	export let models = [];
 	export let modelfiles = [];
@@ -29,13 +29,28 @@
 </script>
 
 {#key mounted}
-	<div class="m-auto w-full px-8 lg:px-20 pb-16">
+	<div class="m-auto w-full px-8 lg:px-20 pb-24">
 		<div class="flex justify-start">
 			<div class="flex space-x-4 mb-1" in:fade={{ duration: 200 }}></div>
 		</div>
-
-		<GetRewards/>
-
+        <div class="flex flex-col justify-center align-center items-center">
+			<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+			  <circle cx="50" cy="50" r="50" fill="white" />
+		    </svg>
+			<div class="text-center mt-2 text-xl">
+				Scholar GPT
+			</div>
+			<div class="text-center text-gray-300 text-lg">
+				$DATA +45.67% | Market Cap: $222.M  
+			</div>
+			<div class="mb-4 text-sm text-gray-600 text-center">
+				Created by: <a href="https://degpt.ai" class="underline">degpt.ai</a>
+			</div>
+			<div class="text-gray-300 w-[80%] max-w-[400px] text-center">
+                Enhance research with 200M+ resources and built-in critical reading skills.
+				Access Google Scholar, PubMed, JSTOR, Arxiv, and more, efforlessly.
+			</div>
+		</div>
 		<div class="w-full bg-1e1e1e padding-10" in:fade={{ duration: 200, delay: 300 }}>
 			<Suggestions {suggestionPrompts} {submitPrompt} />
 		</div>

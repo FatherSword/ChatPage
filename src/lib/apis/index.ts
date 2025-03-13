@@ -36,56 +36,34 @@ export const defaultBackendConfig = async () => {
     "images": false,
     "default_models": "DeepSeek-R1,DeepSeek-V3",
     "default_prompt_suggestions": [
-        {
-            "title": [
-                "Help me study",
-                "vocabulary for a college entrance exam"
-            ],
-            "content": "Help me study vocabulary: write a sentence for me to fill in the blank, and I'll try to pick the correct option."
-        },
-        {
-            "title": [
-                "Give me ideas",
-                "for what to do with my kids' art"
-            ],
-            "content": "What are 5 creative things I could do with my kids' art? I don't want to throw them away, but it's also so much clutter."
-        },
-        {
-            "title": [
-                "Tell me a fun fact",
-                "about the Roman Empire"
-            ],
-            "content": "Tell me a random fun fact about the Roman Empire"
-        },
-        {
-            "title": [
-                "Show me a code snippet",
-                "of a website's sticky header"
-            ],
-            "content": "Show me a code snippet of a website's sticky header in CSS and JavaScript."
-        },
-        {
-            "title": [
-                "Explain options trading",
-                "if I'm familiar with buying and selling stocks"
-            ],
-            "content": "Explain options trading in simple terms if I'm familiar with buying and selling stocks."
-        },
-        {
-            "title": [
-                "Overcome procrastination",
-                "give me tips"
-            ],
-            "content": "Could you start by asking me about instances when I procrastinate the most and then give me some suggestions to overcome it?"
-        },
-        {
-            "title": [
-                "Grammar check",
-                "rewrite it for better readability "
-            ],
-            "content": "Check the following sentence for grammar and clarity: '[sentence]'. Rewrite it for better readability while maintaining its original meaning."
-        }
-    ],
+    {
+        "title": [
+            "Help me create an AI Agent",
+            "Assistance in creating an AI Agent"
+        ],
+        "content": "Can you guide me through the process of creating an AI agent? What are the initial steps and what tools or technologies would be best for this project?"
+    },
+    {
+        "title": [
+            "What functions do you have?",
+            "Your capabilities"
+        ],
+        "content": "What specific functions and capabilities do you offer that can assist me in my projects or research?"
+    },
+    {
+        "title": [
+            "What types of AI Agents can you create?",
+            "Kinds of AI Agents available"
+        ],
+        "content": "Could you provide a list of different types of AI agents that you can create? For example, chatbots, recommendation systems, etc."
+    },
+    {
+        "title": [
+            "Can you tell me how to use xx as an Agent?",
+            "How to use a specific tool as an AI Agent"
+        ],
+        "content": "If I have a specific tool or technology in mind, how can I configure and use it as an AI agent? Please provide a detailed explanation or example."
+    }],
     "trusted_header_auth": false,
     "admin_export_enabled": true
 	}

@@ -61,7 +61,7 @@
 				}}
 			>
 				<Pencil strokeWidth="2" />
-				<div class="flex items-center">{$i18n.t('Rename')}</div>
+				<div class="flex items-center">{$i18n.t("rename")}</div>
 			</DropdownMenu.Item>
 
 			<DropdownMenu.Item

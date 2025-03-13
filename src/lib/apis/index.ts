@@ -29,7 +29,7 @@ export const getBackendConfig = async () => {
 export const defaultBackendConfig = async () => {
 	return {
     "status": true,
-    "name": "DeGPT",
+    "name": "Chat",
     "version": "0.1.125",
     "auth": true,
     "default_locale": "en-US",

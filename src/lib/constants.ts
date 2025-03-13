@@ -1,7 +1,7 @@
 import { browser, dev } from "$app/environment";
 // import { version } from '../../package.json';
 
-export const APP_NAME = "DeGPT";
+export const APP_NAME = "Chat";
 export const WEBUI_BASE_URL = browser
   ? dev
     ? `http://${location.hostname}:8080`

@@ -38,7 +38,7 @@
 			  <circle cx="50" cy="50" r="50" fill="white" />
 		    </svg>
 			<div class="text-center mt-2 text-xl">
-				Scholar GPT
+				Agent Chat
 			</div>
 			<div class="text-center text-gray-300 text-lg">
 				$DATA +45.67% | Market Cap: $222.M  

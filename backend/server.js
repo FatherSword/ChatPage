@@ -1,17 +1,31 @@
-const express = require('express'); // 引入express模块
-const app = express(); // 创建express应用实例
+const express = require('express');
+const cors = require('cors');
+const ollamaRoutes = require('./routes/ollama');
+const app = express();
+const config = require('./config');
+const { AppConfig } = config;
 
-// 定义一个端口号
-const PORT = 8080;
+app.use(cors({
+    origin: "*",
+    credentials: true,
+    methods: "*",
+    allowedHeaders: "*"
+}));
 
-// 定义一个路由，当用户访问根路径（'/'）时，返回特定格式的JSON数据
-app.get('/api/v1/chats/new', (req, res) => {
-    res.json({
-        message: 'Hello, this is your Node.js backend!'
-    });
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// 启动服务器
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.state = {
+    config: new AppConfig(),
+};
+
+app.state.config.ENABLE_MODEL_FILTER = config.ENABLE_MODEL_FILTER;
+app.state.config.MODEL_FILTER_LIST = config.MODEL_FILTER_LIST;
+app.state.config.OLLAMA_BASE_URLS = config.OLLAMA_BASE_URLS;
+app.state.MODELS = {};
+
+app.use('/api/v1/ollama', ollamaRoutes);
+
+app.listen(8080, () => {
+    console.log('Server is running on http://localhost:3000');
 });

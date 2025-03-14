@@ -1,6 +1,5 @@
 import { APP_NAME, DefaultCurrentWalletData } from '$lib/constants';
 import { type Writable, writable } from 'svelte/store';
-
 // Backend
 export const WEBUI_NAME = writable(APP_NAME);
 export const config: Writable<Config | undefined> = writable(undefined);

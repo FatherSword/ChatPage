@@ -413,7 +413,7 @@
               keyword: prompt,
               childrenIds: [],
               role: "assistant",
-              content: "",
+              content: "server overload",
               think_content: "",
               model: model.id,
               userContext: null,

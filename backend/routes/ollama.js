@@ -3,7 +3,7 @@ const axios = require('axios');
 const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 const { get_admin_user, get_current_user, get_verified_user } = require('../utils/utils');
-const { ERROR_MESSAGES } = require('../constants');
+const { ERROR_MESSAGES } = require('../constant');
 const { calculate_sha256 } = require('../utils/misc');
 
 const REQUEST_POOL = [];

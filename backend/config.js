@@ -7,7 +7,7 @@ const axios = require('axios');
 const { JSDOM } = require('jsdom');
 const YAML = require('yaml');
 const crypto = require('crypto');
-const ERROR_MESSAGES = require('./constants');
+const ERROR_MESSAGES = require('./constant');
 
 // Configure logging
 logging.configure({
@@ -18,10 +18,10 @@ logging.configure({
 const log = logging.getLogger('CONFIG');
 
 const log_levels = ["CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG"];
-const GLOBAL_LOG_LEVEL = (process.env.GLOBAL_LOG_LEVEL || "").toUpperCase();
+let GLOBAL_LOG_LEVEL = (process.env.GLOBAL_LOG_LEVEL || "").toUpperCase();
 
 if (log_levels.includes(GLOBAL_LOG_LEVEL)) {
-    log.setLevel(GLOBAL_LOG_LEVEL);
+    log.level = GLOBAL_LOG_LEVEL; // 修改这里
 } else {
     GLOBAL_LOG_LEVEL = "INFO";
 }
@@ -56,7 +56,7 @@ log_sources.forEach(source => {
     log.info(`${log_env_var}: ${SRC_LOG_LEVELS[source]}`);
 });
 
-log.setLevel(SRC_LOG_LEVELS['CONFIG']);
+log.level = SRC_LOG_LEVELS['CONFIG']; // 修改这里
 
 const WEBUI_NAME = process.env.WEBUI_NAME || "DeGPT";
 if (WEBUI_NAME !== "DeGPT") {
@@ -196,7 +196,7 @@ class PersistentConfig {
     }
 
     save() {
-        if (this.envValue === this.value && configValue === this.value) {
+        if (this.envValue === this.value && this.configValue === this.value) { // 修改这里
             return;
         }
         log.info(`Saving '${this.envName}' to config.json`);
@@ -253,6 +253,7 @@ if (fs.existsSync(frontendFavicon)) {
 
 const CUSTOM_NAME = process.env.CUSTOM_NAME;
 
+async function tempfunc(){
 if (CUSTOM_NAME) {
     try {
         const response = await axios.get(`https://api.openwebui.com/api/v1/custom/${CUSTOM_NAME}`);
@@ -271,6 +272,8 @@ if (CUSTOM_NAME) {
         log.error("Error fetching custom data:", e);
     }
 }
+}
+tempfunc();
 
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
